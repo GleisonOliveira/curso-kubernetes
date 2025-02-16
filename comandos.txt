@@ -6,3 +6,10 @@ kubectl get pods --watch //ver os pods e acompanhar o status em tempo real
 kubectl delete pod nginx-pod //deletar um pod
 kubectl delete -f primeiro-pod.yaml //deletar os pods criados pelo arquivo
 kubectl exec -it portal-noticias -- bash //entrar no container do pod
+kubectl get pods -o wide //mostrar os pods como uma tabela
+kubectl get services //  listar os serviços
+kubectl get nodes -o wide //lista os nos
+
+Pod - é um local onde podemos ter um ou mais containers / Morre apenas quando todos os containers morrem
+NodePort - adiciona serviço que permite acesso aos podes de fora do cluster
+Service ClusterIP - adiciona um serviço que possui ip estático e dns que apontará para os pods, é a porta de entrada para acessar os pods
