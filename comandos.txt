@@ -9,7 +9,12 @@ kubectl exec -it portal-noticias -- bash //entrar no container do pod
 kubectl get pods -o wide //mostrar os pods como uma tabela
 kubectl get services //  listar os serviços
 kubectl get nodes -o wide //lista os nos
+kubectl delete pods --all //deletar todos os pods
+kubectl delete services --all //deletar todos os serviços
+kubectl get configmap //mostra os config maps
+kubectl describe configmap db-configmap //descreve  um config map
 
 Pod - é um local onde podemos ter um ou mais containers / Morre apenas quando todos os containers morrem
 NodePort - adiciona serviço que permite acesso aos podes de fora do cluster
 Service ClusterIP - adiciona um serviço que possui ip estático e dns que apontará para os pods, é a porta de entrada para acessar os pods
+ConfigMap - adicionar um serviço que gerencia as configs (envs)
