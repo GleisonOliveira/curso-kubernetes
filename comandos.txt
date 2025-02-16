@@ -1,0 +1,8 @@
+kubectl run nginx-pod --image=nginx:latest // criar um novo pod
+kubectl describe pod nginx-pod //descrever um pod
+kubectl edit pod nginx-pod //editar um pod
+kubectl apply -f primeiro-pod.yaml //aplicar as configd do kubernets
+kubectl get pods --watch //ver os pods e acompanhar o status em tempo real
+kubectl delete pod nginx-pod //deletar um pod
+kubectl delete -f primeiro-pod.yaml //deletar os pods criados pelo arquivo
+kubectl exec -it portal-noticias -- bash //entrar no container do pod
