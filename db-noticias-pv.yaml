@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-noticias-pv
+spec:
+  storageClassName: db-disk
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /run/desktop/mnt/host/d/Projetos/Kubernetes/Alura/dados/db
+    type: DirectoryOrCreate

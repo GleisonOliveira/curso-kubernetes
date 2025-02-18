@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumeMounts:
+        - name: primeiro-volume
+          mountPath: /shared-data
+    - name: jenkins-container
+      image: jenkins/jenkins:alpine-jdk21
+      volumeMounts:
+        - name: primeiro-volume
+          mountPath: /shared-data
+  volumes:
+    - name: primeiro-volume
+      hostPath:
+        # path: ./dados no linux
+        path: /run/desktop/mnt/host/d/Projetos/Kubernetes/Alura/dados
+        type: DirectoryOrCreate

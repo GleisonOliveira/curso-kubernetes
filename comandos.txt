@@ -13,8 +13,21 @@ kubectl delete pods --all //deletar todos os pods
 kubectl delete services --all //deletar todos os serviços
 kubectl get configmap //mostra os config maps
 kubectl describe configmap db-configmap //descreve  um config map
+kubectl get replicasets //lista os replicasets
+kubectl get replicasets --watch //lista os replicasets e atualiza em tempo real
+kubectl get deployments //lista os deployments
+kubectl rollout history deployment nginx-deployment //ver o historico de deployments
+kubectl apply -f nginx-deployment.yaml --record //aplica o deployment e grava os itens aplicados
+kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Alterando a imagem para latests" //cria uma anotacao como se fosse um commit
+kubectl rollout undo deployment nginx-deployment --to-revision=2 //faz rollback para a revisao
+kubectl delete deployment nginx-deployment //deleta os deployments pelo nome
+kubectl exec -it pod-volume --container nginx-container -- bash //acessa um container dentro do pod
+
 
 Pod - é um local onde podemos ter um ou mais containers / Morre apenas quando todos os containers morrem
 NodePort - adiciona serviço que permite acesso aos podes de fora do cluster
 Service ClusterIP - adiciona um serviço que possui ip estático e dns que apontará para os pods, é a porta de entrada para acessar os pods
 ConfigMap - adicionar um serviço que gerencia as configs (envs)
+ReplicaSet - Adicion um serviço que manterá a quantidade de pods de um serviço especificado e iniciará novos caso sejam encerrados
+Volume -é um diretorio montado no container, nesse caso, morre quando o pod morrer
+Statefulset - é usado para recursos que precisam gravar dados, portanto ele usa um PV (persistent volume) ew um PVC (persistent volume claim)
