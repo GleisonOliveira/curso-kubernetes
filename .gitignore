@@ -1,1 +1,13 @@
-dados
+# # Ignorar tudo na pasta dados
+# dados/*
+# !dados/.gitignore
+
+# Ignorar tudo na pasta db dentro de dados
+dados/db/*
+!dados/db/.gitignore
+
+dados/sessao/*
+!dados/sessao/.gitignore
+
+dados/uploads/*
+!dados/uploads/.gitignore

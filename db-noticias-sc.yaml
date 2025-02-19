@@ -4,3 +4,5 @@ metadata:
   name: db-disk
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
+
+# forma de usar em nuvem é passando o sc e o provisioner
